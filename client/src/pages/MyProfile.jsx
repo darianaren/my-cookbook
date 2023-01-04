@@ -64,7 +64,7 @@ const MyProfile = () => {
     try {
       dispatch(loadOn());
       navigate("/login");
-      await axios.delete(`http://localhost:5000/users/${id}`);
+      await axios.delete(`/users/${id}`);
       await getApiCache(false, false, true);
       dispatch(closeUser());
       dispatch(loadOff());
@@ -87,14 +87,9 @@ const MyProfile = () => {
     if (Object.keys(errors).length === 0) {
       try {
         dispatch(loadOn());
-        const update = await axios.put(
-          `http://localhost:5000/users/update/${id}`,
-          body
-        );
+        const update = await axios.put(`/users/update/${id}`, body);
         const userId = update.data.id;
-        const userUpdate = await axios.get(
-          `http://localhost:5000/users/${userId}`
-        );
+        const userUpdate = await axios.get(`/users/${userId}`);
         dispatch(myUser(userUpdate.data));
         dispatch(loadOff());
         dispatch(

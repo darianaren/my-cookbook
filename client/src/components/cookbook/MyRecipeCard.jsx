@@ -34,7 +34,7 @@ const MyRecipeCard = ({ id, image, title, theme }) => {
   const editHandler = (event) => {
     dispatch(loadOn());
     axios
-      .get(`http://localhost:5000/recipes/${id}`)
+      .get(`/recipes/${id}`)
       .then((recipe) => dispatch(getOneRecipe(recipe.data)))
       .then(() => {
         dispatch(loadOff());
@@ -52,14 +52,9 @@ const MyRecipeCard = ({ id, image, title, theme }) => {
   const confirmationHandler = async () => {
     try {
       dispatch(loadOn());
-      await axios.delete(`http://localhost:5000/recipesDb/${oneRecipe.id}`);
-      const updatedRecipes = await getApiCache(
-        "http://localhost:5000/recipes",
-        true
-      );
-      const recipesUser = await axios.get(
-        `http://localhost:5000/users/${user.id}/recipes`
-      );
+      await axios.delete(`/recipesDb/${oneRecipe.id}`);
+      const updatedRecipes = await getApiCache("/recipes", true);
+      const recipesUser = await axios.get(`/users/${user.id}/recipes`);
 
       dispatch(myRecipes(recipesUser.data));
       dispatch(getAllRecipes(updatedRecipes));
@@ -76,7 +71,7 @@ const MyRecipeCard = ({ id, image, title, theme }) => {
   const deleteHandler = async (event) => {
     event.stopPropagation();
     event.preventDefault();
-    const recipeDelete = await axios.get(`http://localhost:5000/recipes/${id}`);
+    const recipeDelete = await axios.get(`/recipes/${id}`);
     dispatch(getOneRecipe(recipeDelete.data));
     dispatch(confirmationOpen());
   };

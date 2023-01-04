@@ -59,7 +59,7 @@ const Recipe = () => {
   useEffect(() => {
     dispatch(loadOn());
     axios
-      .get(`http://localhost:5000/recipes/${id}`)
+      .get(`/recipes/${id}`)
       .then((recipe) => dispatch(getOneRecipe(recipe.data)))
       .then(() => dispatch(loadOff()))
       .catch((error) => {
@@ -96,10 +96,8 @@ const Recipe = () => {
   const favoriteHandler = async (event) => {
     event.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/users/favorites/${user.id}/${id}`);
-      const favorites = await axios.get(
-        `http://localhost:5000/users/${user.id}/favorites`
-      );
+      await axios.put(`/users/favorites/${user.id}/${id}`);
+      const favorites = await axios.get(`/users/${user.id}/favorites`);
       dispatch(myFavorites(favorites.data));
     } catch (error) {
       dispatch(newMessage(error.response.data.error, "error"));
@@ -114,14 +112,9 @@ const Recipe = () => {
   const confirmationHandler = async () => {
     try {
       dispatch(loadOn());
-      await axios.delete(`http://localhost:5000/recipesDb/${id}`);
-      const updatedRecipes = await getApiCache(
-        "http://localhost:5000/recipes",
-        true
-      );
-      const recipesUser = await axios.get(
-        `http://localhost:5000/users/${user.id}/recipes`
-      );
+      await axios.delete(`/recipesDb/${id}`);
+      const updatedRecipes = await getApiCache("/recipes", true);
+      const recipesUser = await axios.get(`/users/${user.id}/recipes`);
 
       dispatch(myRecipes(recipesUser.data));
       dispatch(getAllRecipes(updatedRecipes));

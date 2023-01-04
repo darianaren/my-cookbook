@@ -1,7 +1,7 @@
 import { UPDATE_URL, SEARCH, CLEAR_URL } from "../types";
 
 const initialState = {
-  url: "http://localhost:5000/recipes",
+  url: "/recipes",
   search: "",
 };
 

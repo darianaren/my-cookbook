@@ -102,7 +102,7 @@ const Register = () => {
     ) {
       dispatch(loadOn());
       try {
-        await axios.post(`http://localhost:5000/users`, {
+        await axios.post(`/users`, {
           image,
           firstName,
           lastName,

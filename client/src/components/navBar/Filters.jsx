@@ -48,12 +48,12 @@ const Filters = ({ isOpen, close, clearIcon, theme }) => {
     event.preventDefault();
     resetHandlerFilter();
     dispatch(filters({}));
-    if (url === "http://localhost:5000/recipes") {
+    if (url === "/recipes") {
       getApiCache(url + search).then((recipes) => {
         dispatch(getAllRecipes(recipes));
       });
     }
-    dispatch(updateURL("http://localhost:5000/recipes"));
+    dispatch(updateURL("/recipes"));
     dispatch(newMessage("Filters were successfully reestablished.", "success"));
   };
 
@@ -66,12 +66,12 @@ const Filters = ({ isOpen, close, clearIcon, theme }) => {
     }
     if (Object.keys(errors).length === 0) {
       dispatch(filters(form));
-      if (form.types === "all" && url !== "http://localhost:5000/recipes") {
-        dispatch(updateURL("http://localhost:5000/recipes"));
+      if (form.types === "all" && url !== "/recipes") {
+        dispatch(updateURL("/recipes"));
       } else if (form.types === "db") {
-        dispatch(updateURL("http://localhost:5000/recipesDb"));
+        dispatch(updateURL("/recipesDb"));
       } else if (form.types === "api") {
-        dispatch(updateURL("http://localhost:5000/recipesApi"));
+        dispatch(updateURL("/recipesApi"));
       }
       dispatch(filteredRecipes());
       dispatch(currentPg(1));

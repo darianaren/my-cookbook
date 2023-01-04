@@ -58,17 +58,9 @@ const UpdateRecipe = () => {
   };
 
   const axiosHandler = async (body) => {
-    const updateRecipe = await axios.put(
-      `http://localhost:5000/recipesDb/${oneRecipe.id}`,
-      body
-    );
-    const updatedRecipes = await getApiCache(
-      "http://localhost:5000/recipes",
-      true
-    );
-    const recipesUser = await axios.get(
-      `http://localhost:5000/users/${user.id}/recipes`
-    );
+    const updateRecipe = await axios.put(`/recipesDb/${oneRecipe.id}`, body);
+    const updatedRecipes = await getApiCache("/recipes", true);
+    const recipesUser = await axios.get(`/users/${user.id}/recipes`);
     dispatch(myRecipes(recipesUser.data));
     dispatch(getAllRecipes(updatedRecipes));
     return updateRecipe;

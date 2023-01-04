@@ -56,18 +56,14 @@ const Login = () => {
     if (Object.keys(errors).length === 0) {
       try {
         dispatch(loadOn());
-        const login = await axios.put(`http://localhost:5000/users/login`, {
+        const login = await axios.put(`/users/login`, {
           username,
           password,
         });
         const userId = login.data.id;
-        const userLogin = axios.get(`http://localhost:5000/users/${userId}`);
-        const recipesUser = axios.get(
-          `http://localhost:5000/users/${userId}/recipes`
-        );
-        const favoritesUser = axios.get(
-          `http://localhost:5000/users/${userId}/favorites`
-        );
+        const userLogin = axios.get(`/users/${userId}`);
+        const recipesUser = axios.get(`/users/${userId}/recipes`);
+        const favoritesUser = axios.get(`/users/${userId}/favorites`);
         const [user, recipes, favorites] = await axios.all([
           userLogin,
           recipesUser,

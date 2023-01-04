@@ -33,10 +33,8 @@ const FavoriteCard = ({
     event.preventDefault();
     event.stopPropagation();
     try {
-      await axios.put(`http://localhost:5000/users/favorites/${user.id}/${id}`);
-      const favorites = await axios.get(
-        `http://localhost:5000/users/${user.id}/favorites`
-      );
+      await axios.put(`/users/favorites/${user.id}/${id}`);
+      const favorites = await axios.get(`/users/${user.id}/favorites`);
       dispatch(myFavorites(favorites.data));
     } catch (error) {
       dispatch(newMessage(error.response.data.error, "error"));
