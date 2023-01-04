@@ -1,8 +1,10 @@
+require("dotenv").config();
 const app = require("./app"),
-  { sequelize } = require("./models/database");
+  { sequelize } = require("./models/database"),
+  { PORT } = process.env;
 
-app.listen(5000, () => {
-  console.log("Server listening on port: http://localhost:5000");
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}`);
   sequelize
     .sync({ alter: true })
     .then(() => {

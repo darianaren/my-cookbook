@@ -3,10 +3,10 @@ const { Sequelize } = require("sequelize"),
   modelDiet = require("./modelDiet"),
   modelRecipe = require("./modelRecipe"),
   modelUser = require("./modelUser"),
-  { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
+  { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/food`,
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
   {
     logging: false,
     native: false,
