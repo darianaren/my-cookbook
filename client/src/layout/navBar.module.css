@@ -1,0 +1,269 @@
+@import "../variables.css";
+
+/* LIGHT THEME */
+.header {
+  box-shadow: 0 0.5rem 1rem 0.2rem var(--cream);
+  background-color: var(--cream);
+  z-index: 600;
+}
+.nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 16.6%);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "title title title title user user"
+    "search search loupe filter theme sound"
+    "recipes recipes logo logo diets diets";
+  align-items: center;
+  justify-items: center;
+}
+.nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 3vw;
+  width: 35vw;
+  height: 0.2rem;
+  background-color: var(--red);
+}
+.nav::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 3vw;
+  width: 35vw;
+  height: 0.2rem;
+  background-color: var(--red);
+}
+
+.create-recipe {
+  display: none;
+}
+
+.diets {
+  grid-area: diets;
+  justify-self: start;
+}
+.diets,
+.recipes,
+.create-recipe {
+  padding-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+.diets,
+.login,
+.recipes,
+.create-recipe {
+  font-size: min(1.3rem, 8vw);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: 700;
+}
+
+.filter {
+  grid-area: filter;
+  width: min(1.7rem, 9vw);
+  cursor: pointer;
+  margin: 0.5rem 0 2rem;
+}
+
+.login {
+  grid-area: user;
+  color: var(--green);
+}
+
+.logo-large {
+  display: none;
+}
+
+.logo-small {
+  grid-area: logo;
+  position: relative;
+  z-index: 100;
+  width: 2rem;
+  height: auto;
+  transform: scale(2.6) translateY(0.5rem);
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.loupe {
+  grid-area: loupe;
+  width: min(1.5rem, 9vw);
+  cursor: pointer;
+  margin: 0.5rem 0 2rem;
+}
+
+.recipes {
+  grid-area: recipes;
+  justify-self: end;
+}
+
+.search {
+  grid-area: search;
+  width: 100%;
+}
+
+.search img {
+  margin: 0 0.5rem;
+  width: min(1rem, 4vw);
+  cursor: pointer;
+}
+
+.search > input {
+  margin: 0.5rem 0 2rem;
+  padding: 0.2rem;
+  font-size: max(var(--font-size));
+  color: var(--dark-color);
+  width: 70%;
+  background: none;
+  border-bottom: 0.17rem solid var(--dark-color);
+}
+.search.dark > input::placeholder {
+  color: var(--blurred-dark-color);
+}
+
+.sound {
+  grid-area: sound;
+  width: min(1.6rem, 9vw);
+  cursor: pointer;
+  margin: 0.5rem 0 2rem;
+}
+
+.theme {
+  grid-area: theme;
+  width: min(1.7rem, 9vw);
+  cursor: pointer;
+  margin: 0.5rem 0 2rem;
+}
+
+.title {
+  grid-area: title;
+  text-align: start;
+  font-size: min(2rem, 9vw);
+  padding: 1rem;
+  color: var(--red);
+}
+
+.user {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  grid-area: user;
+  width: min(20vw, 6rem);
+  cursor: pointer;
+}
+
+.create-recipe:hover,
+.diets:hover,
+.theme:hover,
+.sound:hover,
+.filter:hover,
+.recipes:hover,
+.login:hover,
+.logo-large:hover,
+.loupe:hover,
+.user:hover {
+  transform: scale(1.15);
+}
+
+/* DARK THEME */
+.header.dark {
+  box-shadow: 0 0.5rem 1rem 0.2rem var(--dark-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+.dark .filter,
+.dark .loupe,
+.dark .search > img,
+.dark .sound {
+  filter: var(--filter-white);
+}
+.diets.dark,
+.recipes.dark,
+.create-recipe.dark {
+  color: var(--light-color);
+}
+.login.dark {
+  color: var(--yellow);
+}
+.search.dark > input {
+  border-bottom: 0.17rem solid var(--light-color);
+  color: var(--light-color);
+}
+.search.dark > input::placeholder {
+  color: var(--blurred-light-color);
+}
+
+@media screen and (min-width: 60em) {
+  .active {
+    display: none;
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: min(15vw, 15vh);
+  }
+  .nav {
+    margin: auto;
+    display: grid;
+    margin-top: 0;
+    grid-template-columns: repeat(3, 14%) 1fr 22% repeat(4, 5%);
+    grid-template-rows: repeat(1, min-content);
+    grid-template-areas: "user create page . search loupe filter theme sound";
+    justify-items: center;
+    align-content: center;
+    width: max(42rem, 70%);
+    height: 100%;
+  }
+  .nav::after {
+    right: 0;
+    width: 27vw;
+  }
+  .nav::before {
+    left: 0;
+    width: 27vw;
+  }
+  .nav > * {
+    align-self: center;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+  }
+  .diets,
+  .recipes {
+    grid-area: page;
+    justify-self: center;
+  }
+  .create-recipe {
+    display: inline-block;
+    grid-area: create;
+  }
+  .logo-large {
+    display: inline-block;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: min(12vw, 19vh);
+    height: auto;
+    border-radius: 0.25rem 0.25rem 0 0;
+    cursor: pointer;
+  }
+  .logo-small {
+    display: none;
+  }
+  .search > input {
+    margin: 0;
+    padding: 0;
+  }
+  .title {
+    display: none;
+  }
+  .user {
+    width: 4rem;
+    height: auto;
+  }
+}

@@ -1,0 +1,72 @@
+@import "../../variables.css";
+
+/* LIGHT THEME */
+.container {
+  position: relative;
+  padding: 1rem;
+  width: min(85vw, 30rem);
+  height: auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: var(--cream);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 800;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--blurred-dark-color);
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.link-green {
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid #c5b494;
+}
+.link-green,
+.link-red {
+  display: block;
+  margin: min(1rem, 30vw) 2.4rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--dark-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.title {
+  margin: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--red);
+  border-bottom: 0.2rem solid var(--red);
+}
+
+/* DARK THEME */
+.container.dark {
+  background-color: var(--dark-color);
+}
+.modal.dark {
+  background-color: #213e5385;
+}
+.link-green.dark,
+.link-red.dark {
+  color: var(--light-color);
+}
+
+.link-green:hover {
+  color: var(--green);
+}
+.link-red:hover {
+  color: var(--red);
+}

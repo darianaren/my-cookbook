@@ -1,0 +1,43 @@
+@import "../../variables.css";
+
+.closeButton {
+  position: relative;
+  left: 45%;
+  width: 1.3rem;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  padding: 1rem;
+  width: min(30rem, 90vw);
+  height: min(1.9rem, auto);
+  overflow-y: auto;
+  border-radius: 1rem;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+.container > h2 {
+  margin: 0.5rem;
+  color: var(--green);
+}
+.container > p {
+  margin: 1rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 800;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--blurred-dark-color);
+}
+
+.modal.is-open {
+  display: flex;
+}

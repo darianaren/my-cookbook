@@ -1,0 +1,101 @@
+@import "../../variables.css";
+
+/* LIGHT THEME */
+.container {
+  position: relative;
+  padding: 1rem;
+  width: min(20rem, 85vw);
+  max-height: 75vh;
+  overflow-y: auto;
+  border-radius: 1rem;
+  background-color: var(--cream);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 801;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--blurred-dark-color);
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  margin: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid var(--red);
+  border-radius: 0;
+}
+
+.border-bottom {
+  border-bottom: 0.1rem solid #c5b494;
+}
+
+.clear {
+  justify-self: end;
+  width: min(2rem, 35%);
+  height: auto;
+  cursor: pointer;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.filter > summary {
+  margin: 0 2em;
+  padding: 0.3rem;
+  font-size: min(1.3rem, 6vw);
+  font-weight: 500;
+  text-align: start;
+  width: 70%;
+}
+.filter > div {
+  margin-left: 23%;
+  text-align: start;
+}
+.filter > div > input {
+  margin-right: 0.5rem;
+}
+.filter > input {
+  display: block;
+  margin: 0.5rem auto 0;
+  font-size: 1rem;
+  color: var(--dark-color);
+  text-align: center;
+  width: 5rem;
+  border: 0.3rem solid var(--dark-color);
+  border-radius: 1.3rem;
+  background: none;
+}
+
+.title {
+  font-size: min(2rem, 7vw);
+  font-weight: bold;
+  color: var(--red);
+}
+
+/* DARK */
+.clear.dark {
+  filter: var(--filter-white);
+}
+.container.dark {
+  background-color: var(--dark-color);
+}
+.modal.dark {
+  background-color: #213e5385;
+}
+.filter.dark > input {
+  color: var(--light-color);
+  border: 0.3rem solid var(--light-color);
+}

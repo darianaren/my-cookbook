@@ -1,0 +1,157 @@
+@import "../variables.css";
+
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  14% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-25%);
+  }
+  47% {
+    transform: translateX(-25%);
+  }
+  53% {
+    transform: translateX(-50%);
+  }
+  80% {
+    transform: translateX(-50%);
+  }
+  86% {
+    transform: translateX(-75%);
+  }
+  100% {
+    transform: translateX(-75%);
+  }
+}
+
+.bg-login {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  background-image: var(--bg-food);
+  background-position: center center;
+  background-size: cover;
+  background-clip: border-box;
+}
+
+.blurred-style {
+  padding: 2.5vw;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  background-color: var(--blurred-light-color);
+  backdrop-filter: blur(1rem);
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 400%;
+  animation-name: carousel;
+  animation-duration: 23s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.form {
+  align-self: end;
+}
+
+.grid {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 71% 1fr;
+  justify-items: center;
+  align-items: start;
+  width: min(28rem, 100vw);
+  height: 100vh;
+}
+
+.grid-cell {
+  margin: 2.5vw 0;
+  width: 90%;
+  height: auto;
+  overflow: hidden;
+}
+
+.image-carousel {
+  display: none;
+}
+
+.input {
+  display: block;
+  margin: 2.5vw auto;
+  padding: 0.5rem;
+  font-size: max(var(--font-size));
+  width: 90%;
+  background: none;
+  border-bottom: 0.25rem solid var(--red);
+  color: var(--light-color);
+}
+.input::placeholder {
+  color: var(--blurred-dark-color);
+}
+.input::-ms-input-placeholder {
+  color: var(--blurred-dark-color);
+}
+
+.link {
+  text-decoration: underline;
+  color: var(--green);
+  cursor: pointer;
+}
+.logo {
+  display: block;
+  margin: -2.6vw auto 4vw;
+  width: 40%;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.small-letter {
+  font-size: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.text-carousel {
+  display: inline-block;
+  font-size: max(1.2rem, 1.8vw);
+  padding: 0.5rem;
+  border-left: medium solid var(--red);
+}
+
+@media screen and (min-width: 40em) and (orientation: landscape) {
+  .form {
+    order: 2;
+    align-self: center;
+  }
+  .logo {
+    margin: -2.6vw auto 3vh;
+  }
+  .input {
+    margin: 2vh auto;
+  }
+  .grid {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+    width: max(40rem, 70vw);
+    height: 100vh;
+  }
+  .image-carousel {
+    display: inline-block;
+  }
+  .logo {
+    width: 50%;
+  }
+}

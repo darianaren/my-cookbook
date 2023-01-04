@@ -1,0 +1,48 @@
+@import "../variables.css";
+
+@keyframes animationShow {
+  from {
+    transform: translateY(-150%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.container {
+  position: fixed;
+  z-index: 910;
+  left: 5vw;
+  padding: 2rem;
+  width: 90vw;
+  height: auto;
+  top: 1.5rem;
+  transform: translateY(-150%);
+  font-size: 1.3rem;
+  color: var(--light-color);
+  cursor: default;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem 0 #47423794;
+  background-image: var(--bg-blue);
+}
+.container > p {
+  padding-bottom: 1.5rem;
+}
+.container.dark {
+  background-image: var(--bg-gray);
+  box-shadow: 1rem 1rem 1rem 0 #131e25c5;
+}
+.invisible {
+  display: none;
+}
+.visible {
+  animation: animationShow 1s ease forwards;
+  transition: transform 1s;
+}
+@media screen and (min-width: 60em) {
+  .container {
+    left: 25vw;
+    width: 50vw;
+    font-size: 1.5rem;
+  }
+}

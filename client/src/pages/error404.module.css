@@ -1,0 +1,36 @@
+@import "../variables.css";
+
+/* LIGHT THEME */
+.container {
+  margin: auto;
+  padding-top: 5rem;
+  width: max(50vh, 80vw);
+}
+.container > h2 {
+  font-size: max(2.5rem, 5vh);
+  color: var(--red);
+}
+.container > h3 {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+.notFound {
+  width: max(40vh, 40%);
+}
+
+/* DARK THEME */
+.dark {
+  color: var(--light-color);
+  background-image: var(--bg-dark);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 60em) {
+  .container {
+    padding-top: min(20vw, 26vh);
+  }
+}

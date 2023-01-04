@@ -1,0 +1,154 @@
+@import "../../variables.css";
+
+/* LIGHT THEME */
+.grid {
+  margin: 0.7rem auto;
+  display: grid;
+  grid-template-columns: 1fr repeat(2, min(9rem, 33%));
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "image title title"
+    "image diet diet"
+    "image health time";
+  width: 90%;
+  height: auto;
+  border-radius: 1rem;
+  background-color: var(--cream);
+  cursor: pointer;
+}
+.grid:hover {
+  transform: scale(1.08, 1.08);
+  transition-property: transform;
+  transition-duration: 0.5s;
+}
+
+.diets,
+.no-diets {
+  grid-area: diet;
+}
+.diets {
+  padding: 0.7rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 16ch);
+  justify-content: center;
+  justify-items: start;
+  font-size: 0.6rem;
+}
+.diets img {
+  margin-left: 0.5rem;
+  width: 0.5rem;
+}
+.diets p {
+  display: inline-block;
+  padding-left: 0.5rem;
+}
+.no-diets {
+  padding: 0.7rem;
+  font-size: 0.6rem;
+  color: var(--green);
+}
+
+.health {
+  grid-area: health;
+}
+.time {
+  grid-area: time;
+}
+.health,
+.time {
+  display: flex;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+.health > p,
+.time > p {
+  padding-left: 0.5rem;
+}
+
+.icon {
+  width: 1rem;
+}
+
+.image-container {
+  grid-area: image;
+  display: flex;
+  align-items: stretch;
+  border-radius: 1rem 0 0 1rem;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-not-found);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.image {
+  border-radius: 1rem 0 0 1rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title-container {
+  grid-area: title;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-top-right-radius: 1rem;
+  color: var(--cream);
+  background-color: var(--blurred-red);
+}
+.title {
+  text-align: start;
+  font-size: 1rem;
+}
+.fav-icon {
+  width: 1.5rem;
+}
+.fav-icon:hover {
+  filter: sepia(65%) saturate(705%) hue-rotate(320deg) brightness(83%)
+    contrast(101%);
+}
+
+/* DARK THEME */
+.grid.dark {
+  background-color: var(--gray);
+  color: var(--dark-color);
+}
+.title-container.dark {
+  background-color: #1b2a35e5;
+}
+
+@media screen and (min-width: 40em) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 14rem repeat(3, min-content);
+    grid-template-areas:
+      "image image"
+      "title title"
+      "diet diet"
+      "health time";
+    align-content: space-between;
+  }
+  .diets {
+    padding-left: 0;
+    padding-right: 0;
+    grid-row: 2/4;
+  }
+  .image-container {
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    height: 100%;
+  }
+  .image {
+    border-radius: 1rem 1rem 0 0;
+    object-fit: cover;
+  }
+  .title-container {
+    grid-row: 1/2;
+    align-self: end;
+    border-top-right-radius: 0;
+  }
+}

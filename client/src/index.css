@@ -1,0 +1,141 @@
+@import "variables.css";
+
+html {
+  font-family: var(--font-content);
+  font-size: var(--font-size);
+  color: var(--dark-color);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  background-image: var(--bg-light);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  border-radius: 0;
+  box-sizing: inherit;
+}
+html,
+body,
+#root {
+  min-width: 100vw;
+}
+
+footer,
+.before-footer {
+  width: 100vw;
+}
+canvas,
+img,
+iframe,
+picture,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+}
+
+.before-footer {
+  padding-bottom: 7rem;
+  min-height: 100vh;
+}
+
+.button {
+  display: inline-block;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1.5rem;
+  font-size: max(1.2rem, 1.5vw);
+  font-weight: bold;
+  border-radius: 1.7rem;
+  cursor: pointer;
+}
+.button:hover {
+  transform: scale(1.15);
+}
+.button-block {
+  display: block;
+}
+.button-left {
+  margin-right: 0.35rem;
+  margin-left: 0.35rem;
+}
+.button-right {
+  margin-left: 0.35rem;
+  margin-right: 0.35rem;
+}
+.button-red {
+  background-color: var(--red);
+  color: var(--light-color);
+}
+.button-blue {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+.button-green {
+  background-color: var(--green);
+  color: var(--light-color);
+}
+.button-yellow {
+  background-color: var(--yellow);
+  color: var(--dark-color);
+}
+.button-white {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.error {
+  display: block;
+  padding: 0.25rem 0.7rem;
+  font-size: max(var(--font-size));
+  font-weight: 500;
+  border-radius: 0.3rem;
+  background-color: var(--blurred-yellow);
+}
+.error::before {
+  content: "⚠️";
+}
+
+.icon-white {
+  filter: var(--filter-white);
+}
+.icon-blue {
+  filter: var(--filter-blue);
+}
+.icon-red {
+  filter: var(--filter-red);
+}
+.icon-green {
+  filter: var(--filter-green);
+}
+.icon-yellow {
+  filter: var(--filter-yellow);
+}
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+  margin: auto;
+  width: 35%;
+}

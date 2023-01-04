@@ -1,0 +1,454 @@
+@import "../variables.css";
+
+/* LIGHT THEME */
+
+/* GRID CONTAINER */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "image"
+    "header"
+    "data";
+  width: 100vw;
+}
+.header {
+  grid-area: header;
+  color: var(--light-color);
+  width: 100vw;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  background-image: var(--bg-red);
+}
+.header,
+.recipe.data-recipe,
+.info.data-info {
+  position: relative;
+  top: -2rem;
+  padding: 1rem;
+}
+.main-image-container {
+  grid-area: image;
+  position: sticky;
+  top: 0;
+  z-index: -1;
+  width: 100vw;
+  min-height: 65vw;
+  background-image: var(--bg-not-found);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+}
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recipe.data-recipe,
+.info.data-info {
+  grid-area: data;
+  padding-bottom: 6rem;
+  margin-bottom: -2rem;
+  width: 100vw;
+  background-image: var(--bg-cream);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* HEADER */
+.header {
+  display: grid;
+  grid-template-columns: 13% 1fr 13%;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    "title title title"
+    ". create .";
+}
+
+.line-one-header {
+  grid-area: title;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.created-by {
+  grid-area: create;
+}
+.logo-small {
+  width: 2.5rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  height: auto;
+}
+.title {
+  display: inline-block;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+/* DATA */
+/* recipe */
+.data-buttons {
+  display: flex;
+  padding: 1rem 0 3rem;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  width: 100%;
+}
+.main-button {
+  font-weight: 700;
+  position: relative;
+}
+.main-button::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: -5rem;
+  width: 40vw;
+  height: 0.2rem;
+  background-color: var(--dark-color);
+}
+.summary {
+  padding: 1rem 2rem 2rem;
+  text-align: start;
+  font-size: 1.1rem;
+}
+.ingredients,
+.instructions {
+  padding: 0.5rem 2rem;
+  display: grid;
+  grid-template-columns: 10% 1fr;
+  grid-auto-rows: min-content;
+  justify-items: start;
+  align-items: center;
+  text-align: start;
+  font-size: 1.1rem;
+}
+.ingredients > img {
+  margin-right: 1rem;
+  justify-self: end;
+  width: 2rem;
+}
+.ins-number {
+  justify-self: end;
+  font-size: 2rem;
+  font-weight: 700;
+  width: 2.6rem;
+}
+.instruction {
+  margin-left: 0.5rem;
+}
+
+/* info */
+.info.data-info {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.serving-health-time {
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+.serving-icon,
+.health-icon,
+.time-icon {
+  margin-left: 2rem;
+  width: 2rem;
+  height: auto;
+}
+.serving,
+.health,
+.time {
+  margin-right: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.cuisines {
+  font-size: 1.5rem;
+  padding: 2rem 2rem 0;
+}
+.diets-title {
+  padding: 2rem 2rem 0;
+}
+
+.dish-title {
+  padding: 2rem 2rem 0;
+}
+.occasions-title {
+  padding: 2rem 2rem 0;
+}
+.diet,
+.dish,
+.occasion {
+  padding: 0.5rem 2rem;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-auto-rows: min-content;
+  justify-items: start;
+  align-items: center;
+  text-align: start;
+  font-size: 1.1rem;
+  width: 100%;
+}
+.diet > img,
+.dish > img,
+.occasion > img {
+  margin-right: 1rem;
+  justify-self: end;
+  width: 1.3rem;
+}
+.diet > p,
+.dish > p,
+.occasion > p {
+  margin-left: 0.5rem;
+}
+
+.no-data {
+  padding: 3rem 3rem 0;
+}
+
+/* OTHERS */
+.fav-icon,
+.edit-button,
+.delete-button {
+  margin: 0.5rem;
+  width: 1.5rem;
+  height: auto;
+}
+.back-button {
+  width: 1rem;
+  height: auto;
+}
+
+.back-button,
+.button {
+  cursor: pointer;
+}
+.back-button:hover,
+.button:hover {
+  transform: scale(1.15);
+}
+
+.normal-pointer {
+  cursor: default;
+}
+
+.fav-button,
+.image-info-container,
+.info.data-recipe,
+.image-info,
+.logo,
+.recipe.data-info {
+  display: none;
+}
+
+/* DARK THEME */
+.header.dark {
+  background-image: var(--bg-blue);
+}
+.recipe.data-recipe.dark,
+.info.data-info.dark {
+  background-image: var(--bg-gray);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@media screen and (min-width: 36em) and (orientation: landscape) {
+  .fav-button,
+  .info.data-recipe,
+  .image-info,
+  .logo,
+  .recipe.data-info {
+    display: inline-block;
+  }
+
+  /* GRID CONTAINER */
+
+  .container {
+    display: grid;
+    padding-bottom: 5rem;
+    grid-template-columns: repeat(6, 16.66%);
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas:
+      "header header header header header header"
+      ". recipe recipe info info ."
+      ". . fav fav . .";
+    justify-items: center;
+    font-size: 1rem;
+    width: 100vw;
+    height: auto;
+  }
+
+  .header {
+    grid-area: header;
+    padding: 1rem 15vw;
+    box-shadow: 0 0.5rem 1rem 0.2rem var(--cream);
+    background-image: none;
+    background-color: var(--cream);
+  }
+  .fav-button {
+    grid-area: fav;
+    margin-bottom: 3rem;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .header.light {
+    color: var(--dark-color);
+  }
+  .header.light .button {
+    filter: var(--filter-red);
+  }
+  .created-by {
+    padding-right: 5rem;
+  }
+  .line-one-header {
+    position: relative;
+  }
+  .line-one-header::after {
+    content: "";
+    position: absolute;
+    bottom: 1.2rem;
+    left: 18%;
+    width: 55%;
+    height: 0.25rem;
+    background-color: var(--red);
+  }
+  .logo {
+    width: 6rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  .title {
+    padding: 3rem;
+  }
+  /* RECIPE */
+
+  .summary-title {
+    padding-top: 1.5rem;
+  }
+
+  .recipe,
+  .recipe.data-info,
+  .recipe.data-recipe {
+    grid-area: recipe;
+    position: static;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 1rem 1rem 3rem;
+    width: 100%;
+    max-height: 200vh;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    background-image: var(--bg-cream);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-y: auto;
+  }
+
+  .info,
+  .info.data-info,
+  .info.data-recipe {
+    grid-area: info;
+    position: static;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 1rem 1rem 3rem;
+    width: 100%;
+    max-height: 200vh;
+    color: var(--light-color);
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    background-image: var(--bg-red);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-y: auto;
+  }
+  /* INFO */
+  .image-info-container {
+    display: flex;
+    align-items: stretch;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    width: 90%;
+    min-height: 15rem;
+    background-image: var(--bg-not-found);
+    background-repeat: no-repeat;
+    background-size: 100% 15rem;
+  }
+  .image-info {
+    display: inline;
+    width: 100%;
+    border-radius: 2rem;
+    object-fit: cover;
+  }
+  /* OTHERS */
+
+  .container.light > .button,
+  .back-button {
+    filter: var(--filter-red);
+  }
+
+  .serving-icon,
+  .health-icon,
+  .time-icon,
+  .icon-white {
+    filter: var(--filter-white);
+  }
+  .serving-icon,
+  .health-icon,
+  .time-icon {
+    width: max(1.5rem, 2vw);
+    margin-left: 0.5rem;
+  }
+  .serving,
+  .health,
+  .time {
+    font-size: max(1rem, 1.5vw);
+    margin-right: 0.5rem;
+  }
+
+  .main-image,
+  .main-image-container,
+  .fav-icon,
+  .logo-small,
+  .data-buttons {
+    display: none;
+  }
+  /* DARK THEME */
+  .header.dark {
+    box-shadow: 0 0.5rem 1rem 0.2rem var(--dark-color);
+    background-image: none;
+    background-color: var(--dark-color);
+  }
+  .container.dark {
+    background-image: var(--bg-dark);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .info.dark,
+  .info.data-info.dark,
+  .info.data-recipe.dark {
+    background-image: var(--bg-blue);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}

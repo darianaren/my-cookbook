@@ -1,0 +1,36 @@
+:root {
+  --font-size: max(18px, 1.2vw);
+  --font-title: sans-serif;
+  --font-content: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --light-color: #e9ddc7;
+  --blurred-light-color: #e9ddc785;
+  --dark-color: #1b2a35;
+  --blurred-dark-color: #1b2a3585;
+  --red: #d11e26;
+  --blurred-red: #d11e27bd;
+  --green: #405c23;
+  --blurred-green: #405c2325;
+  --yellow: #f0a323;
+  --blurred-yellow: #ffbd539a;
+  --gray: #879292;
+  --cream: #f0e6d4;
+  --olive: #405c23c9;
+  --bg-light: url("assets/background/bg-light.png");
+  --bg-dark: url("assets/background/bg-dark.png");
+  --bg-cream: url("assets/background/bg-cream.png");
+  --bg-blue: url("assets/background/bg-blue.png");
+  --bg-gray: url("assets/background/bg-gray.png");
+  --bg-red: url("assets/background/bg-red.png");
+  --bg-food: url("assets/background/bg-food.png");
+  --bg-not-found: url("assets/notFound/image-not-found.jpg");
+  --filter-white: invert(94%) sepia(14%) saturate(357%) hue-rotate(342deg)
+    brightness(93%) contrast(97%);
+  --filter-blue: invert(14%) sepia(13%) saturate(1372%) hue-rotate(163deg)
+    brightness(97%) contrast(95%);
+  --filter-red: invert(15%) sepia(65%) saturate(5305%) hue-rotate(349deg)
+    brightness(93%) contrast(91%);
+  --filter-green: invert(29%) sepia(37%) saturate(732%) hue-rotate(47deg)
+    brightness(92%) contrast(86%);
+  --filter-yellow: invert(83%) sepia(23%) saturate(6217%) hue-rotate(345deg)
+    brightness(99%) contrast(89%);
+}

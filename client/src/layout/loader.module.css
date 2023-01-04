@@ -1,0 +1,28 @@
+@import "../variables.css";
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  position: absolute;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--blurred-dark-color);
+}
+
+.loader {
+  margin: 40vh auto;
+  width: max(15vw, 12vh);
+  height: max(15vw, 12vh);
+  border: max(2vw, 2vh) solid var(--blurred-dark-color);
+  border-top-color: var(--yellow);
+  border-radius: 50%;
+  animation: spinner 1.5s ease-out infinite;
+}

@@ -1,0 +1,135 @@
+@import "../variables.css";
+
+/* LIGHT THEME */
+
+.padding {
+  padding: 0 3rem;
+  padding-top: 5rem;
+}
+.padding > h1 {
+  font-weight: 800;
+}
+.padding p {
+  font-size: 1.2rem;
+}
+.view-recipes {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.view-recipes:hover {
+  color: var(--yellow);
+}
+.diet-card {
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+    "image title"
+    "image summary";
+  color: var(--cream);
+  max-height: 30vw;
+  border-radius: 1.5rem;
+  background-color: var(--olive);
+  cursor: default;
+  overflow-y: auto;
+}
+
+.diet-card > img {
+  grid-area: image;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+.diet-card > img:hover {
+  transform: scale(1.08, 1.08);
+  transition-property: transform;
+  transition-duration: 0.5s;
+}
+.diet-card > h2 {
+  grid-area: title;
+  font-size: 2rem;
+}
+.diet-card > p {
+  grid-area: summary;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: start;
+}
+
+/* DARK THEME */
+.container.dark {
+  color: var(--light-color);
+  background-image: var(--bg-dark);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.diet-card.dark {
+  color: var(--dark-color);
+  background-color: var(--blurred-yellow);
+}
+.diet-card.dark > .view-recipes:hover {
+  color: var(--light-color);
+}
+.view-recipes.dark:hover {
+  color: var(--light-color);
+}
+
+@media screen and (min-width: 60em) {
+  .diet-card {
+    margin: 2.5rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(2, min-content);
+    justify-items: center;
+    align-items: center;
+    width: 16rem;
+    max-height: 23rem;
+  }
+  .grid {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, max(18rem));
+    justify-content: center;
+  }
+  .padding {
+    margin: auto;
+    padding-top: min(20vw, 26vh);
+    padding-left: 0;
+    padding-right: 0;
+    width: max(33rem, 65vw);
+  }
+  .diet-card > img {
+    position: static;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    width: 100%;
+    height: auto;
+  }
+  .diet-card > h2 {
+    font-size: 2.5rem;
+    z-index: 20;
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  .diet-card > h2:hover {
+    transform: scale(1.08, 1.08);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+  .diet-card > p {
+    z-index: 20;
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+}

@@ -1,0 +1,28 @@
+@import "../variables.css";
+
+/* LIGHT THEME */
+.button {
+  cursor: pointer;
+}
+
+.paged {
+  margin: 3rem auto;
+  display: flex;
+  justify-content: space-evenly;
+  width: 13rem;
+}
+.paged > * {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--dark-color);
+  background: none;
+}
+
+/* DARK THEME */
+.paged.dark > * {
+  color: var(--light-color);
+}
+
+.button:hover {
+  color: var(--red);
+}

@@ -1,0 +1,168 @@
+@import "../variables.css";
+
+.benefits {
+  display: none;
+}
+
+.bg-register {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  background-image: var(--bg-food);
+  background-position: center center;
+  background-size: cover;
+  background-clip: border-box;
+}
+
+.blurred-style {
+  padding: 4vw;
+  width: 50%;
+  height: auto;
+  border-radius: 1rem;
+  background-color: var(--blurred-light-color);
+  backdrop-filter: blur(1rem);
+  overflow: hidden;
+}
+
+.checkbox {
+  width: 1rem;
+}
+
+.form {
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+}
+
+.image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.image-button {
+  width: 1.3rem;
+  margin: 0.7rem;
+  cursor: pointer;
+}
+.image-button:hover {
+  filter: var(--filter-yellow);
+}
+
+.input {
+  display: block;
+  margin: 0.8rem auto;
+  padding: 0.5rem;
+  font-size: max(var(--font-size));
+  width: 90%;
+  background-color: var(--blurred-green);
+  border: 0.25rem solid var(--green);
+  border-radius: 1.5rem;
+  color: var(--light-color);
+}
+.input::placeholder {
+  color: var(--blurred-dark-color);
+}
+.input::-ms-input-placeholder {
+  color: var(--blurred-dark-color);
+}
+
+.label {
+  display: block;
+  padding: 0 10%;
+  text-align: start;
+  font-size: max(1rem, 1.4vw);
+  font-weight: 500;
+  color: var(--green);
+}
+.link {
+  text-decoration: underline;
+  color: var(--green);
+  cursor: pointer;
+}
+
+.next {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 200%;
+  height: 100vh;
+  transition: transform 0.5s ease;
+  transform: translateX(-50%);
+}
+
+.prev {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 200%;
+  height: 100vh;
+  transition: transform 0.5s ease;
+  transform: translateX(0%);
+}
+.profile-photo {
+  width: 50%;
+  padding: 0.3rem;
+  border: 0.4rem solid var(--green);
+  border-radius: 50%;
+}
+
+.small-letter {
+  font-size: 0.7rem;
+  padding-bottom: 0.9rem;
+}
+
+.terms-conditions {
+  display: flex;
+  justify-content: center;
+}
+.terms-conditions > p {
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 36em) and (orientation: landscape) {
+  .benefits {
+    display: inline-block;
+    font-size: max(1.3rem, 2vw);
+    width: auto;
+    height: auto;
+  }
+  .benefits > h1 {
+    font-size: max(2rem, 2.5vw);
+    color: var(--green);
+  }
+  .benefits > p {
+    font-weight: 500;
+  }
+  .benefits > div {
+    margin: 1.3rem auto 0;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    grid-template-rows: repeat(3, 5rem);
+    align-items: center;
+    width: 80%;
+    height: auto;
+  }
+  .benefits > div > img {
+    width: max(1.2rem, 2vw);
+  }
+  .grid {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+    width: max(41rem, 65vw);
+    height: 100vh;
+  }
+  .image-button {
+    width: 7.5%;
+  }
+  .form {
+    width: min(90%, 55vh);
+  }
+}
