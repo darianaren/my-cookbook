@@ -3,7 +3,7 @@ import Message from "./layout/Message";
 import RouterFunction from "./routes";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "my-cookbook-production.up.railway.app";
 
 function App() {
   return (
