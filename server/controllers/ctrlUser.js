@@ -61,7 +61,7 @@ async function getFavorites(idUser) {
           allFavorites.push(recipeFound);
         }
       } else {
-        const recipeFound = await getOneApiRecipe(id);
+        const recipeFound = await getOneApiRecipe(idRecipe);
         if (!recipeFound) {
           await modifyFavorites(userFound.id, idRecipe);
         } else {
