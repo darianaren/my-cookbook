@@ -55,6 +55,8 @@ const Recipes = () => {
       })
       .catch((error) => {
         dispatch(loadOff());
+        dispatch(getAllRecipes([]));
+        dispatch(originalRecipes([]));
         dispatch(newMessage("Recipes not found.", "error"));
       });
   }, [url, search]);
