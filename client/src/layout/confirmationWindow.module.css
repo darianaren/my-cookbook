@@ -12,11 +12,11 @@
 .container {
   position: fixed;
   z-index: 910;
+  top: 1.5rem;
   left: 5vw;
   padding: 2rem;
   width: 90vw;
   height: auto;
-  top: 1.5rem;
   transform: translateY(-150%);
   font-size: 1.3rem;
   color: var(--light-color);
