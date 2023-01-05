@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { icons } from "../../utils/helpers/assets";
 import { dietsName } from "../../utils/helpers/dataForm";
-import { loadOn } from "../../stateManagement/actions/loadActions";
+import { loadOff, loadOn } from "../../stateManagement/actions/loadActions";
 import { myFavorites } from "../../stateManagement/actions/userActions";
 import { newMessage } from "../../stateManagement/actions/messageActions";
 
