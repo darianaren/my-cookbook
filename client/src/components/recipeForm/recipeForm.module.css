@@ -124,7 +124,7 @@
 
 .instructions,
 .ingredients {
-  margin: auto;
+  margin: 1rem auto;
   display: grid;
   grid-template-columns: 20% 60% 20%;
   grid-auto-rows: min-content;
