@@ -47,6 +47,7 @@ const CreateRecipe = () => {
       ingredientsState={[]}
       stepsState={[]}
       titlePage='Create your own recipe'
+      messageConfirm='The recipe was successfully created.'
     />
   );
 };

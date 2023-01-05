@@ -25,6 +25,7 @@ const RecipeForm = ({
   ingredientsState,
   stepsState,
   titlePage,
+  messageConfirm,
 }) => {
   const dispatch = useDispatch(),
     navigate = useNavigate(),
@@ -206,9 +207,7 @@ const RecipeForm = ({
       try {
         const newRecipe = await axiosHandler(body);
         dispatch(loadOff());
-        dispatch(
-          newMessage("The recipe has been successfully created!", "success")
-        );
+        dispatch(newMessage(messageConfirm, "success"));
         navigate(`/recipe/${newRecipe.data.id}`);
       } catch (error) {
         dispatch(loadOff());

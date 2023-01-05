@@ -74,6 +74,7 @@ const UpdateRecipe = () => {
       ingredientsState={ingredientsState}
       stepsState={stepsState}
       titlePage='Update your recipe'
+      messageConfirm='The recipe was successfully updated.'
     />
   );
 };
