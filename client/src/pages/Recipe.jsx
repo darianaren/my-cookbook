@@ -97,10 +97,13 @@ const Recipe = () => {
     event.preventDefault();
     event.stopPropagation();
     try {
+      dispatch(loadOn());
       await axios.put(`/users/favorites/add/${user.id}/${id}`);
       const favorites = await axios.get(`/users/favorites/${user.id}`);
       dispatch(myFavorites(favorites.data));
+      dispatch(loadOff());
     } catch (error) {
+      dispatch(loadOff());
       dispatch(newMessage(error.response.data.error, "error"));
     }
   };
@@ -109,10 +112,13 @@ const Recipe = () => {
     event.preventDefault();
     event.stopPropagation();
     try {
+      dispatch(loadOn());
       await axios.put(`/users/favorites/remove/${user.id}/${id}`);
       const favorites = await axios.get(`/users/favorites/${user.id}`);
       dispatch(myFavorites(favorites.data));
+      dispatch(loadOff());
     } catch (error) {
+      dispatch(loadOff());
       dispatch(newMessage(error.response.data.error, "error"));
     }
   };

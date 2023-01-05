@@ -73,6 +73,7 @@ const UpdateRecipe = () => {
       axiosHandler={axiosHandler}
       ingredientsState={ingredientsState}
       stepsState={stepsState}
+      titlePage='Update your recipe'
     />
   );
 };

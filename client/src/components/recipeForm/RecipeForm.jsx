@@ -24,6 +24,7 @@ const RecipeForm = ({
   axiosHandler,
   ingredientsState,
   stepsState,
+  titlePage,
 }) => {
   const dispatch = useDispatch(),
     navigate = useNavigate(),
@@ -220,7 +221,7 @@ const RecipeForm = ({
     <div className={`${style["container"]} ${style[theme]}`}>
       <header className={`${style["header"]} ${style[theme]}`}>
         <BackHomeButton className={`icon-red ${style["back-button"]}`} />
-        <h1>Create your own recipe</h1>
+        <h1>{titlePage}</h1>
         <img className={`${style["logo"]}`} src={logo.large} alt='Logo' />
       </header>
 

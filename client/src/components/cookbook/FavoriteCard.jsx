@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { icons } from "../../utils/helpers/assets";
 import { dietsName } from "../../utils/helpers/dataForm";
+import { loadOn } from "../../stateManagement/actions/loadActions";
 import { myFavorites } from "../../stateManagement/actions/userActions";
 import { newMessage } from "../../stateManagement/actions/messageActions";
 
@@ -33,10 +34,13 @@ const FavoriteCard = ({
     event.preventDefault();
     event.stopPropagation();
     try {
+      dispatch(loadOn());
       await axios.put(`/users/favorites/add/${user.id}/${id}`);
       const favorites = await axios.get(`/users/favorites/${user.id}`);
       dispatch(myFavorites(favorites.data));
+      dispatch(loadOff());
     } catch (error) {
+      dispatch(loadOff());
       dispatch(newMessage(error.response.data.error, "error"));
     }
   };
@@ -45,10 +49,13 @@ const FavoriteCard = ({
     event.preventDefault();
     event.stopPropagation();
     try {
+      dispatch(loadOn());
       await axios.put(`/users/favorites/remove/${user.id}/${id}`);
       const favorites = await axios.get(`/users/favorites/${user.id}`);
       dispatch(myFavorites(favorites.data));
+      dispatch(loadOff());
     } catch (error) {
+      dispatch(loadOff());
       dispatch(newMessage(error.response.data.error, "error"));
     }
   };

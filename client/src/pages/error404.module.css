@@ -3,6 +3,7 @@
 /* LIGHT THEME */
 .container {
   margin: auto;
+  margin-bottom: -5rem;
   padding-top: 5rem;
   width: max(50vh, 80vw);
 }
@@ -15,7 +16,7 @@
   margin: 0.5rem;
 }
 .notFound {
-  width: max(40vh, 40%);
+  width: max(30vh, 40%);
 }
 
 /* DARK THEME */
@@ -31,6 +32,7 @@
 
 @media screen and (min-width: 60em) {
   .container {
+    margin-bottom: 0;
     padding-top: min(20vw, 26vh);
   }
 }

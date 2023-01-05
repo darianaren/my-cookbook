@@ -46,6 +46,7 @@ const CreateRecipe = () => {
       axiosHandler={axiosHandler}
       ingredientsState={[]}
       stepsState={[]}
+      titlePage='Create your own recipe'
     />
   );
 };
