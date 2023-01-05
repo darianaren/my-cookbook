@@ -1,10 +1,11 @@
 const { Router } = require("express"),
-  {
+  routerRecipeApi = Router();
+
+const {
     getOneApiRecipe,
     getOneFakeRecipe,
-    getRecipes,
-  } = require("../controllers/ctrlRecipe"),
-  routerRecipeApi = Router();
+  } = require("../../controllers/recipesControllers/api"),
+  { getRecipes } = require("../../controllers/recipesControllers/all");
 
 routerRecipeApi
 

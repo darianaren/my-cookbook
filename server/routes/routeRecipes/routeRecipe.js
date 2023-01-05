@@ -1,11 +1,12 @@
 const { Router } = require("express"),
-  {
+  routerRecipe = Router();
+
+const {
     getOneApiRecipe,
     getOneFakeRecipe,
-    getOneDbRecipe,
-    getRecipes,
-  } = require("../controllers/ctrlRecipe"),
-  routerRecipe = Router();
+  } = require("../../controllers/recipesControllers/api"),
+  { getRecipes } = require("../../controllers/recipesControllers/all"),
+  { getOneDbRecipe } = require("../../controllers/recipesControllers/db");
 
 routerRecipe
   .get("/", async (req, res) => {

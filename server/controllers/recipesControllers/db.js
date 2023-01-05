@@ -1,19 +1,6 @@
 require("dotenv").config();
-const { User, Recipe, Diet } = require("../models/database"),
-  { dataApiCache, dataApiIdCache } = require("../helpers/helpApi"),
-  { API_KEY } = process.env,
-  urlApi = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`,
-  urlFake = `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`;
+const { User, Recipe, Diet } = require("../../models/database");
 
-async function getApiRecipes() {
-  try {
-    // const recipesApi = await dataApiCache(urlFake);
-    const recipesApi = await dataApiCache(urlApi);
-    return recipesApi;
-  } catch (error) {
-    throw error;
-  }
-}
 async function getDbRecipes() {
   const allDbRecipes = await Recipe.findAll({
     include: [
@@ -31,34 +18,7 @@ async function getDbRecipes() {
   });
   return allDbRecipes.reverse();
 }
-async function getAllRecipes() {
-  const apiRecipes = await getApiRecipes();
-  const dbRecipes = await getDbRecipes();
-  return [...dbRecipes, ...apiRecipes];
-}
 
-async function getOneApiRecipe(id) {
-  try {
-    const recipeApi = await dataApiIdCache(
-      `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
-    );
-    return recipeApi;
-  } catch (error) {
-    throw error;
-  }
-}
-async function getOneFakeRecipe(id) {
-  try {
-    const allRecipes = await dataApiCache(urlFake);
-    const idRecipe = allRecipes.find((recipe) => recipe.id === parseInt(id));
-    if (!idRecipe) {
-      throw "Recipe not found.";
-    }
-    return idRecipe;
-  } catch (error) {
-    throw error;
-  }
-}
 async function getOneDbRecipe(id) {
   const oneDbRecipe = await Recipe.findByPk(id, {
     include: [
@@ -95,6 +55,7 @@ async function postDbRecipe(object) {
     instructions,
     diets,
   } = object;
+
   if (
     !idUser ||
     !title ||
@@ -107,10 +68,13 @@ async function postDbRecipe(object) {
   ) {
     throw "Data are incomplete.";
   }
+
   const userFound = await User.findByPk(idUser);
+
   if (!userFound) {
     throw "User not found.";
   }
+
   const newRecipe = await Recipe.create({
     title,
     summary,
@@ -125,6 +89,7 @@ async function postDbRecipe(object) {
     instructions,
     createdBy_id: idUser,
   });
+
   if (diets.length > 0) {
     for (let dietName of diets) {
       const [dietFound, created] = await Diet.findOrCreate({
@@ -139,6 +104,7 @@ async function postDbRecipe(object) {
 
   return newRecipe;
 }
+
 async function updateDbRecipe(id, object) {
   const recipeFound = await Recipe.findByPk(id, {
     include: [
@@ -222,6 +188,7 @@ async function updateDbRecipe(id, object) {
   await recipeFound.save();
   return recipeFound;
 }
+
 async function deleteDbRecipe(id) {
   try {
     await Recipe.destroy({ where: { id } });
@@ -231,35 +198,10 @@ async function deleteDbRecipe(id) {
   }
 }
 
-async function getRecipes(method, title) {
-  try {
-    let allApiRecipes;
-    if (method === "api") {
-      allApiRecipes = await getApiRecipes();
-    } else if (method === "db") {
-      allApiRecipes = await getDbRecipes();
-    } else if (method === "all") {
-      allApiRecipes = await getAllRecipes();
-    }
-    if (title) {
-      const myTitle = decodeURI(title);
-      allApiRecipes = await allApiRecipes.filter((recipe) =>
-        recipe.title.toLowerCase().includes(myTitle.toLowerCase())
-      );
-    }
-
-    return allApiRecipes;
-  } catch (error) {
-    throw error;
-  }
-}
-
 module.exports = {
-  getOneApiRecipe,
-  getOneFakeRecipe,
+  getDbRecipes,
   getOneDbRecipe,
   postDbRecipe,
   updateDbRecipe,
   deleteDbRecipe,
-  getRecipes,
 };

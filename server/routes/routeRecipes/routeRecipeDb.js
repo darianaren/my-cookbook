@@ -1,12 +1,13 @@
 const { Router } = require("express"),
-  {
+  routerRecipeDb = Router();
+
+const {
     getOneDbRecipe,
     postDbRecipe,
     updateDbRecipe,
     deleteDbRecipe,
-    getRecipes,
-  } = require("../controllers/ctrlRecipe"),
-  routerRecipeDb = Router();
+  } = require("../../controllers/recipesControllers/db"),
+  { getRecipes } = require("../../controllers/recipesControllers/all");
 
 routerRecipeDb
   .get("/", async (req, res) => {

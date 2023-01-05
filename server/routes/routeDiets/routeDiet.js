@@ -1,6 +1,10 @@
 const { Router } = require("express"),
-  { getDiets, getOneDiet } = require("../controllers/ctrlDiet"),
   routerDiet = Router();
+
+const {
+  getDiets,
+  getOneDiet,
+} = require("../../controllers/dietsControllers/diets");
 
 routerDiet
   .get("/", async (req, res) => {
