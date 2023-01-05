@@ -29,12 +29,24 @@ const FavoriteCard = ({
     navigate(`/recipe/${id}`);
   };
 
-  const favoriteHandler = async (event) => {
+  const addFavoriteHandler = async (event) => {
     event.preventDefault();
     event.stopPropagation();
     try {
-      await axios.put(`/users/favorites/${user.id}/${id}`);
-      const favorites = await axios.get(`/users/${user.id}/favorites`);
+      await axios.put(`/users/favorites/add/${user.id}/${id}`);
+      const favorites = await axios.get(`/users/favorites/${user.id}`);
+      dispatch(myFavorites(favorites.data));
+    } catch (error) {
+      dispatch(newMessage(error.response.data.error, "error"));
+    }
+  };
+
+  const removeFavoriteHandler = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    try {
+      await axios.put(`/users/favorites/remove/${user.id}/${id}`);
+      const favorites = await axios.get(`/users/favorites/${user.id}`);
       dispatch(myFavorites(favorites.data));
     } catch (error) {
       dispatch(newMessage(error.response.data.error, "error"));
@@ -57,7 +69,7 @@ const FavoriteCard = ({
             className={`${style["fav-icon"]}`}
             src={icons.fav}
             alt='Add to my cookbook'
-            onClick={favoriteHandler}
+            onClick={addFavoriteHandler}
           />
         )}
         {isMyFavorite && (
@@ -65,7 +77,7 @@ const FavoriteCard = ({
             className={`${style["fav-icon"]}`}
             src={icons.favFill}
             alt='Remove to my cookbook'
-            onClick={favoriteHandler}
+            onClick={removeFavoriteHandler}
           />
         )}
       </div>

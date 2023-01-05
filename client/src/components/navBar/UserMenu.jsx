@@ -19,7 +19,7 @@ const UserMenu = ({ isOpen, close, theme }) => {
   const confirmationHandler = async () => {
     try {
       dispatch(loadOn());
-      await axios.put(`/users/logout/${user.id}`);
+      await axios.put(`/users/log/${user.id}`);
       dispatch(closeUser());
       dispatch(loadOff());
       dispatch(newMessage("Good bye! Come back soon.", "success"));

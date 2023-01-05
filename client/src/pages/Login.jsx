@@ -56,14 +56,14 @@ const Login = () => {
     if (Object.keys(errors).length === 0) {
       try {
         dispatch(loadOn());
-        const login = await axios.put(`/users/login`, {
+        const login = await axios.put(`/users/log`, {
           username,
           password,
         });
         const userId = login.data.id;
         const userLogin = axios.get(`/users/${userId}`);
-        const recipesUser = axios.get(`/users/${userId}/recipes`);
-        const favoritesUser = axios.get(`/users/${userId}/favorites`);
+        const recipesUser = axios.get(`/users/my-recipes/${userId}`);
+        const favoritesUser = axios.get(`/users/favorites/${userId}`);
         const [user, recipes, favorites] = await axios.all([
           userLogin,
           recipesUser,

@@ -52,9 +52,9 @@ const MyRecipeCard = ({ id, image, title, theme }) => {
   const confirmationHandler = async () => {
     try {
       dispatch(loadOn());
-      await axios.delete(`/recipesDb/${oneRecipe.id}`);
+      await axios.delete(`/recipes-db/${oneRecipe.id}`);
       const updatedRecipes = await getApiCache("/recipes", true);
-      const recipesUser = await axios.get(`/users/${user.id}/recipes`);
+      const recipesUser = await axios.get(`/users/my-recipes/${user.id}`);
 
       dispatch(myRecipes(recipesUser.data));
       dispatch(getAllRecipes(updatedRecipes));
@@ -63,7 +63,7 @@ const MyRecipeCard = ({ id, image, title, theme }) => {
       dispatch(newMessage("The recipe was successfully deleted", "success"));
       dispatch(getOneRecipe({}));
     } catch (error) {
-      dispatch(newMessage(error.response.data.error, "error"));
+      dispatch(newMessage("An error has occurred.", "error"));
       dispatch(getOneRecipe({}));
     }
   };

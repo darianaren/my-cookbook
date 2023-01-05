@@ -31,9 +31,9 @@ const CreateRecipe = () => {
   };
 
   const axiosHandler = async (body) => {
-    const newRecipe = await axios.post("/recipesDb", body);
+    const newRecipe = await axios.post("/recipes-db", body);
     const updatedRecipes = await getApiCache("/recipes", true);
-    const recipesUser = await axios.get(`/users/${user.id}/recipes`);
+    const recipesUser = await axios.get(`/users/my-recipes/${user.id}`);
     dispatch(myRecipes(recipesUser.data));
     dispatch(getAllRecipes(updatedRecipes));
     dispatch(originalRecipes(updatedRecipes));

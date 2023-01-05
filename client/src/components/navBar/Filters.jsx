@@ -69,9 +69,9 @@ const Filters = ({ isOpen, close, clearIcon, theme }) => {
       if (form.types === "all" && url !== "/recipes") {
         dispatch(updateURL("/recipes"));
       } else if (form.types === "db") {
-        dispatch(updateURL("/recipesDb"));
+        dispatch(updateURL("/recipes-db"));
       } else if (form.types === "api") {
-        dispatch(updateURL("/recipesApi"));
+        dispatch(updateURL("/recipes-api"));
       }
       dispatch(filteredRecipes());
       dispatch(currentPg(1));

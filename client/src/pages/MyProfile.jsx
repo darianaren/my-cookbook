@@ -87,7 +87,7 @@ const MyProfile = () => {
     if (Object.keys(errors).length === 0) {
       try {
         dispatch(loadOn());
-        const update = await axios.put(`/users/update/${id}`, body);
+        const update = await axios.put(`/users/${id}`, body);
         const userId = update.data.id;
         const userUpdate = await axios.get(`/users/${userId}`);
         dispatch(myUser(userUpdate.data));

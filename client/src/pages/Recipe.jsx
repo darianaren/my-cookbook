@@ -93,11 +93,24 @@ const Recipe = () => {
     }
   };
 
-  const favoriteHandler = async (event) => {
+  const addFavoriteHandler = async (event) => {
     event.preventDefault();
+    event.stopPropagation();
     try {
-      await axios.put(`/users/favorites/${user.id}/${id}`);
-      const favorites = await axios.get(`/users/${user.id}/favorites`);
+      await axios.put(`/users/favorites/add/${user.id}/${id}`);
+      const favorites = await axios.get(`/users/favorites/${user.id}`);
+      dispatch(myFavorites(favorites.data));
+    } catch (error) {
+      dispatch(newMessage(error.response.data.error, "error"));
+    }
+  };
+
+  const removeFavoriteHandler = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    try {
+      await axios.put(`/users/favorites/remove/${user.id}/${id}`);
+      const favorites = await axios.get(`/users/favorites/${user.id}`);
       dispatch(myFavorites(favorites.data));
     } catch (error) {
       dispatch(newMessage(error.response.data.error, "error"));
@@ -112,9 +125,9 @@ const Recipe = () => {
   const confirmationHandler = async () => {
     try {
       dispatch(loadOn());
-      await axios.delete(`/recipesDb/${id}`);
+      await axios.delete(`/recipes-db/${id}`);
       const updatedRecipes = await getApiCache("/recipes", true);
-      const recipesUser = await axios.get(`/users/${user.id}/recipes`);
+      const recipesUser = await axios.get(`/users/my-recipes/${user.id}`);
 
       dispatch(myRecipes(recipesUser.data));
       dispatch(getAllRecipes(updatedRecipes));
@@ -166,7 +179,7 @@ const Recipe = () => {
                   className={`${style["fav-icon"]} ${style["button"]}`}
                   src={icons.fav}
                   alt='Add to my cookbook'
-                  onClick={favoriteHandler}
+                  onClick={addFavoriteHandler}
                 />
               )}
               {user && !myRecipe && isMyFavorite && (
@@ -174,7 +187,7 @@ const Recipe = () => {
                   className={`${style["fav-icon"]} ${style["button"]}`}
                   src={icons.favFill}
                   alt='Remove to my cookbook'
-                  onClick={favoriteHandler}
+                  onClick={removeFavoriteHandler}
                 />
               )}
 
@@ -432,7 +445,7 @@ const Recipe = () => {
           {user && !myRecipe && !isMyFavorite && (
             <button
               className={`button button-box button-yellow ${style["fav-button"]}`}
-              onClick={favoriteHandler}
+              onClick={addFavoriteHandler}
             >
               Add to my cookbook
             </button>
@@ -440,7 +453,7 @@ const Recipe = () => {
           {user && !myRecipe && isMyFavorite && (
             <button
               className={`button button-box button-yellow ${style["fav-button"]}`}
-              onClick={favoriteHandler}
+              onClick={removeFavoriteHandler}
             >
               Remove to my cookbook
             </button>
