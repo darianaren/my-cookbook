@@ -8,7 +8,7 @@ import {
   dishTypesInfo,
   occasionsInfo,
 } from "../../utils/helpers/dataForm";
-import BackHomeButton from "../BackHomeButton";
+import BackHomeButton from "../others/BackHomeButton";
 import useForm from "../../utils/hooks/useForm";
 import { icons, logo } from "../../utils/helpers/assets";
 import validationsRecipe from "../../utils/helpers/validationsRecipe";

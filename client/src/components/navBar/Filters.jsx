@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { newMessage } from "../../stateManagement/actions/messageActions";
 
 import {
   currentPg,
@@ -17,6 +16,7 @@ import useForm from "../../utils/hooks/useForm";
 import { getApiCache } from "../../utils/api/cacheApi";
 import { updateURL } from "../../stateManagement/actions/urlActions";
 import validationsFilter from "../../utils/helpers/validationsFilter";
+import { newMessage } from "../../stateManagement/actions/messageActions";
 
 import style from "./filters.module.css";
 

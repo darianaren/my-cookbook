@@ -9,7 +9,7 @@ import {
 } from "../../stateManagement/actions/recipeActions";
 import { icons } from "../../utils/helpers/assets";
 import { getApiCache } from "../../utils/api/cacheApi";
-import ConfirmationWindow from "../../layout/ConfirmationWindow";
+import ConfirmationWindow from "../others/ConfirmationWindow";
 import { myRecipes } from "../../stateManagement/actions/userActions";
 import { newMessage } from "../../stateManagement/actions/messageActions";
 import { loadOff, loadOn } from "../../stateManagement/actions/loadActions";

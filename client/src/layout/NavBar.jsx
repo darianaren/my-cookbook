@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
-import Sound from "./Sound";
+import Sound from "../components/navBar/Sound";
 import useModal from "../utils/hooks/useModal";
 import Search from "../components/navBar/Search";
 import Filters from "../components/navBar/Filters";

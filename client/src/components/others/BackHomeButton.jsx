@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { getOneRecipe } from "../stateManagement/actions/recipeActions";
-import { icons } from "../utils/helpers/assets";
+import { getOneRecipe } from "../../stateManagement/actions/recipeActions";
+import { icons } from "../../utils/helpers/assets";
 
 const BackHomeButton = ({ className }) => {
   const navigate = useNavigate();

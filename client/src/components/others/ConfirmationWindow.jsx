@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { confirmationClose } from "../stateManagement/actions/confirmationActions";
+
+import { confirmationClose } from "../../stateManagement/actions/confirmationActions";
+
 import style from "./confirmationWindow.module.css";
 
 const ConfirmationWindow = ({ message, handler }) => {

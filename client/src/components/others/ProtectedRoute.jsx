@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 
-import { newMessage } from "../stateManagement/actions/messageActions";
+import { newMessage } from "../../stateManagement/actions/messageActions";
 
 const ProtectedRoute = () => {
   const dispatch = useDispatch(),

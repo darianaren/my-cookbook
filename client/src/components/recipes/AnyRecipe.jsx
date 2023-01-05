@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import notFound from "../assets/notFound/data-not-found.png";
+import notFound from "../../assets/notFound/data-not-found.png";
 
 import style from "./anyRecipe.module.css";
 

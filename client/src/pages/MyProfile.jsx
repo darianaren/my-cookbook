@@ -3,17 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import useForm from "../utils/hooks/useForm";
-import BackHomeButton from "../components/BackHomeButton";
-import ConfirmationWindow from "../layout/ConfirmationWindow";
-import { icons, logo, profilePhoto } from "../utils/helpers/assets";
+import { getApiCache } from "../utils/api/cacheApi";
+import BackHomeButton from "../components/others/BackHomeButton";
 import validationsUpdate from "../utils/helpers/validationsUpdate";
+import { icons, logo, profilePhoto } from "../utils/helpers/assets";
 import { newMessage } from "../stateManagement/actions/messageActions";
 import { loadOff, loadOn } from "../stateManagement/actions/loadActions";
+import ConfirmationWindow from "../components/others/ConfirmationWindow";
 import { closeUser, myUser } from "../stateManagement/actions/userActions";
 import { confirmationOpen } from "../stateManagement/actions/confirmationActions";
 
 import style from "./myProfile.module.css";
-import { getApiCache } from "../utils/api/cacheApi";
 
 const MyProfile = () => {
   const dispatch = useDispatch(),

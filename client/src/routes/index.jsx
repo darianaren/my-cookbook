@@ -9,7 +9,7 @@ import MyProfile from "../pages/MyProfile";
 import Recipe from "../pages/Recipe";
 import Recipes from "../pages/Recipes";
 import Register from "../pages/Register";
-import ProtectedRoute from "../components/ProtectedRoute";
+import ProtectedRoute from "../components/others/ProtectedRoute";
 import UpdateRecipe from "../pages/UpdateRecipe";
 
 const RouterFunction = () => {

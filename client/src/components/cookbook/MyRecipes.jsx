@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
 import MyRecipeCard from "./MyRecipeCard";
+import { icons } from "../../utils/helpers/assets";
 
 import style from "../../pages/userCookbook.module.css";
-import { icons } from "../../utils/helpers/assets";
 
 const MyRecipes = ({ theme }) => {
   const navigate = useNavigate(),

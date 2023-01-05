@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 import linkedin from "../assets/contact/linkedin.png";
@@ -5,7 +6,6 @@ import gmail from "../assets/contact/gmail.png";
 import behance from "../assets/contact/behance.png";
 
 import style from "./footer.module.css";
-import { useSelector } from "react-redux";
 
 const Footer = () => {
   const { pathname } = useLocation(),

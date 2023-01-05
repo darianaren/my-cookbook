@@ -11,8 +11,8 @@ import {
 import { getApiCache } from "../utils/api/cacheApi";
 import { icons, logo } from "../utils/helpers/assets";
 import { dietsName } from "../utils/helpers/dataForm";
-import BackHomeButton from "../components/BackHomeButton";
-import ConfirmationWindow from "../layout/ConfirmationWindow";
+import BackHomeButton from "../components/others/BackHomeButton";
+import ConfirmationWindow from "../components/others/ConfirmationWindow";
 import { newMessage } from "../stateManagement/actions/messageActions";
 import { loadOff, loadOn } from "../stateManagement/actions/loadActions";
 import { myFavorites, myRecipes } from "../stateManagement/actions/userActions";

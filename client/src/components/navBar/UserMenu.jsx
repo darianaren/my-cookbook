@@ -2,7 +2,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 
-import ConfirmationWindow from "../../layout/ConfirmationWindow";
+import ConfirmationWindow from "../others/ConfirmationWindow";
 import { closeUser } from "../../stateManagement/actions/userActions";
 import { newMessage } from "../../stateManagement/actions/messageActions";
 import { loadOff, loadOn } from "../../stateManagement/actions/loadActions";

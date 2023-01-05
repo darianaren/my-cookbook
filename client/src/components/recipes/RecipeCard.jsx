@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { icons } from "../utils/helpers/assets";
-import { dietsName } from "../utils/helpers/dataForm";
+
+import { icons } from "../../utils/helpers/assets";
+import { dietsName } from "../../utils/helpers/dataForm";
 
 import style from "./recipeCard.module.css";
 

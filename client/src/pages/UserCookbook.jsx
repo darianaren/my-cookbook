@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-import AnyRecipe from "../components/AnyRecipe";
-import { icons, profilePhoto } from "../utils/helpers/assets";
+import AnyRecipe from "../components/recipes/AnyRecipe";
 import MyRecipes from "../components/cookbook/MyRecipes";
 import Favorites from "../components/cookbook/Favorites";
-import BackHomeButton from "../components/BackHomeButton";
+import BackHomeButton from "../components/others/BackHomeButton";
 import AllRecipes from "../components/cookbook/AllRecipes";
+import { icons, profilePhoto } from "../utils/helpers/assets";
 
 import style from "./userCookbook.module.css";
 

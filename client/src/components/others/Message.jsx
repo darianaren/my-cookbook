@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { hiddenMessage } from "../stateManagement/actions/messageActions";
+import { hiddenMessage } from "../../stateManagement/actions/messageActions";
 
 import style from "./message.module.css";
 

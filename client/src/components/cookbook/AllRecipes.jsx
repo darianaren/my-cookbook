@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
-import RecipeCard from "../RecipeCard";
+
+import RecipeCard from "../recipes/RecipeCard";
+
 import style from "../../pages/userCookbook.module.css";
 
 const AllRecipes = ({ theme }) => {

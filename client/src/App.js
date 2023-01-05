@@ -1,5 +1,5 @@
-import Loader from "./layout/Loader";
-import Message from "./layout/Message";
+import Loader from "./components/others/Loader";
+import Message from "./components/others/Message";
 import RouterFunction from "./routes";
 import axios from "axios";
 

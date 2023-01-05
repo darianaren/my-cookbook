@@ -10,8 +10,8 @@ import {
 } from "../stateManagement/actions/recipeActions";
 import Paged from "../layout/Paged";
 import NavBar from "../layout/NavBar";
-import AnyRecipe from "../components/AnyRecipe";
-import RecipeCard from "../components/RecipeCard";
+import AnyRecipe from "../components/recipes/AnyRecipe";
+import RecipeCard from "../components/recipes/RecipeCard";
 import { getApiCache } from "../utils/api/cacheApi";
 import { newMessage } from "../stateManagement/actions/messageActions";
 import { loadOff, loadOn } from "../stateManagement/actions/loadActions";

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { soundOff, soundOn } from "../stateManagement/actions/soundActions";
+import { soundOff, soundOn } from "../../stateManagement/actions/soundActions";
 
 import style from "./navBar.module.css";
 
