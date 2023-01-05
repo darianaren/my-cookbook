@@ -64,7 +64,15 @@ async function postDbRecipe(object) {
     !ingredients ||
     !time ||
     !servings ||
-    !instructions
+    !instructions ||
+    title.length === 0 ||
+    summary.length === 0 ||
+    healthScore <= 0 ||
+    healthScore > 100 ||
+    ingredients.length === 0 ||
+    time <= 0 ||
+    servings <= 0 ||
+    instructions.length === 0
   ) {
     throw "Data are incomplete.";
   }
@@ -153,12 +161,15 @@ async function updateDbRecipe(id, object) {
     !ingredients ||
     !time ||
     !servings ||
-    !image ||
-    !cuisines ||
-    !dishTypes ||
-    !occasions ||
     !instructions ||
-    !diets
+    title.length === 0 ||
+    summary.length === 0 ||
+    healthScore <= 0 ||
+    healthScore > 100 ||
+    ingredients.length === 0 ||
+    time <= 0 ||
+    servings <= 0 ||
+    instructions.length === 0
   ) {
     throw "Data are incomplete.";
   }
