@@ -21,14 +21,7 @@
   margin: auto;
   overflow: hidden;
 }
-.form::-webkit-scrollbar-thumb {
-  border-left: 0.25rem solid transparent;
-  transition-property: border-left;
-  transition-duration: 0.5s;
-}
-.form:hover::-webkit-scrollbar-thumb {
-  border-left: 0.25rem solid gray;
-}
+
 .flexbox-1,
 .flexbox-2,
 .flexbox-3,
@@ -59,6 +52,21 @@
   background-size: cover;
   overflow-y: auto;
 }
+.section-one::-webkit-scrollbar-thumb,
+.section-two::-webkit-scrollbar-thumb,
+.section-three::-webkit-scrollbar-thumb,
+.section-four::-webkit-scrollbar-thumb {
+  border-left: 0.25rem solid transparent;
+  transition-property: border-left;
+  transition-duration: 0.5s;
+}
+.section-one:hover::-webkit-scrollbar-thumb,
+.section-two:hover::-webkit-scrollbar-thumb,
+.section-three:hover::-webkit-scrollbar-thumb,
+.section-four:hover::-webkit-scrollbar-thumb {
+  border-left: 0.25rem solid gray;
+}
+
 .label,
 .input {
   display: block;

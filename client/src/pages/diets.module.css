@@ -3,7 +3,7 @@
 /* LIGHT THEME */
 
 .padding {
-  padding: 0 3rem;
+  padding: 0 1.5rem;
   padding-top: 5rem;
 }
 .padding > h1 {
@@ -24,7 +24,7 @@
 }
 .diet-card {
   margin: 2.5rem auto;
-  padding: 1.5rem;
+  padding: 1.25rem;
   display: grid;
   grid-template-columns: 30% 1fr;
   grid-template-rows: repeat(2, min-content);
@@ -32,10 +32,11 @@
     "image title"
     "image summary";
   color: var(--cream);
-  max-height: 30vw;
+  max-height: max(30vw, 20vh);
   border-radius: 1.5rem;
   background-color: var(--olive);
   cursor: default;
+  overflow-x: visible;
   overflow-y: auto;
 }
 .diet-card::-webkit-scrollbar-thumb {
