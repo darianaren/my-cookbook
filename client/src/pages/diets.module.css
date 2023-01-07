@@ -38,7 +38,14 @@
   cursor: default;
   overflow-y: auto;
 }
-
+.diet-card::-webkit-scrollbar-thumb {
+  border-left: 0.25rem solid transparent;
+  transition-property: border-left;
+  transition-duration: 0.5s;
+}
+.diet-card:hover::-webkit-scrollbar-thumb {
+  border-left: 0.25rem solid gray;
+}
 .diet-card > img {
   grid-area: image;
   position: sticky;

@@ -23,6 +23,8 @@
   color: var(--light-color);
 }
 
-.button:hover {
-  color: var(--red);
+@media (pointer: fine) {
+  .button:hover {
+    color: var(--red);
+  }
 }

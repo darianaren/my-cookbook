@@ -31,6 +31,19 @@ body,
   min-width: 100vw;
 }
 
+*::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-left: 0.25rem solid gray;
+  background-color: transparent;
+}
+
 footer,
 .before-footer {
   width: 100vw;
