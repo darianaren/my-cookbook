@@ -106,8 +106,8 @@
   content: "";
   position: absolute;
   bottom: -0.5rem;
-  left: -5rem;
-  width: 40vw;
+  left: -10vw;
+  width: calc(20vw + 5ch);
   height: 0.2rem;
   background-color: var(--dark-color);
 }
