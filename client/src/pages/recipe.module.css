@@ -127,6 +127,9 @@
   text-align: start;
   font-size: 1.1rem;
 }
+.instructions-title {
+  margin-top: 2rem;
+}
 .ingredients > img {
   margin-right: 1rem;
   justify-self: end;
