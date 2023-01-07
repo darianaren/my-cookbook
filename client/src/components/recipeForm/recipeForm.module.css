@@ -21,6 +21,14 @@
   margin: auto;
   overflow: hidden;
 }
+.form::-webkit-scrollbar-thumb {
+  border-left: 0.25rem solid transparent;
+  transition-property: border-left;
+  transition-duration: 0.5s;
+}
+.form:hover::-webkit-scrollbar-thumb {
+  border-left: 0.25rem solid gray;
+}
 .flexbox-1,
 .flexbox-2,
 .flexbox-3,

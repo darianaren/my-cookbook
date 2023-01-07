@@ -378,6 +378,25 @@
     background-size: cover;
     overflow-y: auto;
   }
+
+  .recipe::-webkit-scrollbar-thumb,
+  .recipe.data-info::-webkit-scrollbar-thumb,
+  .recipe.data-recipe::-webkit-scrollbar-thumb,
+  .info::-webkit-scrollbar-thumb,
+  .info.data-info::-webkit-scrollbar-thumb,
+  .info.data-recipe::-webkit-scrollbar-thumb {
+    border-left: 0.25rem solid transparent;
+    transition-property: border-left;
+    transition-duration: 0.5s;
+  }
+  .recipe:hover::-webkit-scrollbar-thumb,
+  .recipe.data-info:hover::-webkit-scrollbar-thumb,
+  .recipe.data-recipe:hover::-webkit-scrollbar-thumb,
+  .info:hover::-webkit-scrollbar-thumb,
+  .info.data-info:hover::-webkit-scrollbar-thumb,
+  .info.data-recipe:hover::-webkit-scrollbar-thumb {
+    border-left: 0.25rem solid gray;
+  }
   /* INFO */
   .image-info-container {
     display: flex;

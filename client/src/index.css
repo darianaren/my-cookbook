@@ -8,6 +8,7 @@ html {
   margin: 0;
   padding: 0;
   border-width: 0;
+  background-color: var(--light-color);
   background-image: var(--bg-light);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -33,10 +34,11 @@ body,
 
 *::-webkit-scrollbar {
   width: 0.6rem;
+  background-color: transparent;
 }
 
 *::-webkit-scrollbar-track {
-  background: none;
+  background-color: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
