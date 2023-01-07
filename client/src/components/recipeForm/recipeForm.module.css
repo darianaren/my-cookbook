@@ -280,9 +280,11 @@
   color: var(--light-color);
   border: 0.25rem solid var(--light-color);
 }
+.form.dark textarea::placeholder,
 .form.dark input::placeholder {
   color: var(--blurred-light-color);
 }
+.form.dark textarea::-ms-input-placeholder,
 .form.dark input::-ms-input-placeholder {
   color: var(--blurred-light-color);
 }
