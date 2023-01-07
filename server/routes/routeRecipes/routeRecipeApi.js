@@ -1,10 +1,7 @@
 const { Router } = require("express"),
   routerRecipeApi = Router();
 
-const {
-    getOneApiRecipe,
-    getOneFakeRecipe,
-  } = require("../../controllers/recipesControllers/api"),
+const { getOneApiRecipe } = require("../../controllers/recipesControllers/api"),
   { getRecipes } = require("../../controllers/recipesControllers/all");
 
 routerRecipeApi
@@ -22,7 +19,6 @@ routerRecipeApi
     try {
       const { id } = req.params;
       const recipe = await getOneApiRecipe(id);
-      // const recipe = await getOneFakeRecipe(id);
       res.json(recipe);
     } catch (error) {
       res.status(404).json({ error });

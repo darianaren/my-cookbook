@@ -1,10 +1,7 @@
 const { Router } = require("express"),
   routerRecipe = Router();
 
-const {
-    getOneApiRecipe,
-    getOneFakeRecipe,
-  } = require("../../controllers/recipesControllers/api"),
+const { getOneApiRecipe } = require("../../controllers/recipesControllers/api"),
   { getRecipes } = require("../../controllers/recipesControllers/all"),
   { getOneDbRecipe } = require("../../controllers/recipesControllers/db");
 
@@ -23,7 +20,6 @@ routerRecipe
       const { id } = req.params;
       if (id.length < 15) {
         const oneRecipe = await getOneApiRecipe(id);
-        // const oneRecipe = await getOneFakeRecipe(id);
         res.json(oneRecipe);
       } else {
         const oneRecipe = await getOneDbRecipe(id);

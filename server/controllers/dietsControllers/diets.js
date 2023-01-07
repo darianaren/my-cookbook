@@ -2,8 +2,7 @@ require("dotenv").config();
 const { Recipe, Diet } = require("../../models/database"),
   { dietsApiCache } = require("../../helpers/helpApi"),
   { API_KEY } = process.env,
-  urlApi = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`,
-  urlFake = `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`;
+  urlApi = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`;
 
 module.exports = {
   getDiets: async function () {
