@@ -8,11 +8,6 @@ const { Router } = require("express"),
   router = Router();
 
 router
-  .get(`/`, (req, res) => {
-    res.send(
-      `Hello Word! Routes: 1) /users 2) /recipes 3) /recipes-db 4) /recipes-api 5) /diets`
-    );
-  })
   .use(`/users`, routerUser)
   .use(`/recipes`, routerRecipe)
   .use(`/recipes-db`, routerRecipeDb)
