@@ -162,7 +162,7 @@ const RecipeForm = ({
       );
       setIngredientsList([...ingRevome]);
     }
-  };
+  }; 
 
   const submitHandler = async (event) => {
     event.preventDefault();
